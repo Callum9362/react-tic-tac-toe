@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/game';
+import Board from './components/board';
 import Square from './components/square';
 
 function App() {
   return (
     <div className="App">
-      <Square value="X" onClick={() => alert('X')} />
+      <Square />
+      <Board />
+      <Game />
     </div>
   );
 }

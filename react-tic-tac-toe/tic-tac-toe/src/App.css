@@ -1,7 +1,6 @@
 .square {
   background-color: azure;
   border: 1px #999 solid;
-  float: left;
   font-size: 50px;
   font-weight: bold;
   margin-right: -1px;
