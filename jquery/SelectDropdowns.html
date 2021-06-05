@@ -1,0 +1,45 @@
+<!-- THIS FILE ALLOWS A USER TO CHANGE A SELECT DROPDOWN AND DISPLAY CONTENT BASED ON OPTION SELECTED-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <select name="optionDropdown" id="optionDropdown" >
+        <option value="1">Callum</option>
+        <option value="2">Jessie</option>
+    </select>
+<div>
+    <span data-value="1" class="option">You selected callum</span>
+    <span data-value="2" class="option">You selected Jessie</span>
+</div>
+</body>
+</html>
+<script>
+$(document).ready(() =>
+{
+    const select = $("#optionDropdown");
+    if(select.length)
+    {
+        select.on('change', () =>{
+            let value = select.val();
+            let optionsElements = $(".option");
+            for(let i = 0; i < optionsElements.length; i++)
+            {
+                let cur = $(optionsElements[i]);
+                
+                if(cur.data('value') == value)
+                {
+                    
+                    cur.show();
+                }
+                else
+                {
+                    cur.hide();
+                }
+            }
+        });
+        select.trigger('change');
+    }
+});
+</script>
